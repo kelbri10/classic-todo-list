@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Classic to list single page web application">
+        <meta name="keywords" content="todo list classic interactive">
+
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="index.css">
+        <title></title>
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <h1>Missus Piggy</h1> 
+                
+                <div class="stackig-context">
+                    <img src="/classic-todo-list/vecteezy_piggy-bank-income-money_10825450.jpg" width="500px" alt="piggy bank with gold coins falling into slot">
+                    <input type="number" id="amount" min="0" max="1000" placeholder="10">
+                </div>
+            </header>
+    
+            <section class="directions">
+                <h2>How to Use</h2>
+                <ol>
+                    <li>Set a money goal (or five!)</li>
+                    <li>Connect your account to pay yourself from.</li>
+                    <li>Add a chore, task, or activity that you want to get done today, tomorrow, or this week.</li>
+                    <li>Set the amount that activity is worth. Maybe going to the gym means you pay yourself $10!</li>
+                    <li>Track the number of activities or tasks you completed, adjust, or delete them!</li>
+                    <li>Once you've completed all your tasks, treat yourself!</li>
+                </ol>
+    
+                <p><b>Note:</b> Make sure you budget enough for the week according to how much you want to pay yourself. Nothing sucks more than not having the funds to enjoy that sweet treat!</p>
+            </section>
+    
+    
+            <div class="buttons">
+                <button id="add-activity">Add</button>
+                <button id="edit-activity">Edit</button>
+                <button id="delete-activity">Delete</button>
+            </div>
+    
+            <div class="activity-list"></div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

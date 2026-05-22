@@ -1,0 +1,102 @@
+/* ---- CSS Variables ---- */
+:root{
+    --pastel-red: #ffadad; 
+    --pastel-orange: #ffd6a5; 
+    --pastel-yellow: #fdffb6; 
+    --pastel-green: #caffbf; 
+    --pastel-lgt-blue: #9bf6ff; 
+    --pastel-blue: #a0c4ff; 
+    --pastel-violet: #bdb2ff; 
+    --pastel-pink: #ffc6ff; 
+}
+
+*{ 
+    background-color: #3E4C54;
+}
+body{ 
+    display: flex; 
+    justify-content: center;
+    align-content: center;
+}
+.container{ 
+    padding: 2em; 
+    width: 1000px; 
+    border: 2px solid black; 
+
+
+}
+
+header{
+    margin-top: 2rem; 
+    margin-bottom: 2rem; 
+    h1{ 
+        font-size: 4rem; /* 12 * 4 = 48 px */
+        color: var(--pastel-pink); 
+        text-align: center; 
+        margin-bottom: 40px; 
+    }
+    img{ 
+        width: 50%;   
+        justify-self: center;
+        position: relative; 
+        top: 0; 
+        z-index: 1; 
+    }
+    input[type=number]{
+        color: var(--pastel-blue);
+        font-size: 1.5rem; 
+        font-weight: bolder; 
+        background-color: white;
+        position: relative; 
+        left: 50%; 
+        top: -100px; 
+        bottom: -25%; 
+        z-index: 2;
+}
+}
+
+.directions{ 
+    color: white; 
+    h2{ 
+        font-size: 2rem; 
+    }
+    li{ 
+        font-size: 1.25rem; 
+    }
+    p{ 
+        margin: 40px; 
+    }
+}
+/*---- Button Styling ----*/
+.buttons{ 
+    width: 80%;
+    margin-top: 1em; 
+    justify-self: center; 
+
+    display: flex; 
+    justify-content: space-evenly;
+}
+
+button{
+    background-color: transparent;
+    border: 0.25em solid black;
+    border-radius: 5%; 
+    width: 20%; 
+    padding: 1em; 
+    font-weight: bolder; 
+}
+
+#delete-activity{
+    border-color: var(--pastel-red); 
+    color: var(--pastel-red); 
+}
+
+#edit-activity{
+    border-color: var(--pastel-blue); 
+    color: var(--pastel-blue); 
+}
+
+#add-activity{ 
+    border-color: var(--pastel-green); 
+    color: var(--pastel-green); 
+}
