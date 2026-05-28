@@ -39,20 +39,6 @@ function generateDeleteButton () {
     return deleteButton; 
 }
 
-// function editActivity() { 
-//     console.log('edit button clicked'); 
-//     // const ul = document.getElementById('activities'); 
-//     // let index = editButton.getAttribute('data-index'); 
-//     // let childNodes = ul.querySelectorAll('#activity'); 
-//     // let match; 
-
-//     // childNodes.forEach((node) => {
-//     //     if(node.getAttribute('data-index') == index){
-//     //         match = node; 
-//     //         return; 
-//     //     }
-//     // })
-// }
 function editActivity () {
     console.log(editActivity); 
 }
@@ -116,7 +102,9 @@ function addActivity () {
     const input = document.getElementById('activity-to-add')
     const newActivity = document.createElement('input'); 
     const div = document.createElement('div'); 
-
+    const buttonDiv = document.createElement('div'); 
+    buttonDiv.setAttribute('class', 'edit-delete'); 
+    div.setAttribute('class', 'card'); 
     activityAttributes = {
         "type": "checkbox",
         "id": "activity",
@@ -138,7 +126,8 @@ function addActivity () {
 
     let editButton = generateEditButton(); 
     editButton.setAttribute('data-index', liAttributes['data-index']); 
-    div.append(newActivity, label, deleteButton, editButton); 
+    buttonDiv.append(deleteButton, editButton)
+    div.append(newActivity, label, buttonDiv); 
     li.appendChild(div); 
     ul.appendChild(li); 
 
@@ -212,23 +201,26 @@ function editActivity () {
 
 }
 const addButton = document.getElementById('add-activity'); 
-// const editButton = document.getElementById('edit-activity'); 
-// const deleteButton = document.getElementById('delete-activity'); 
 const startButton = document.getElementById('start-timer'); 
+const quickset = document.getElementsByClassName('quickset'); 
+console.log(quickset[0].children); 
+for(const button of quickset[0].children){
+    button.addEventListener('click', ()=> { 
+        let timer = document.getElementById('timer')
+        let currentTimerInput = timer.value; 
+        console.log(typeof timerInput)
+        let val = button.getAttribute('data-value'); 
+        console.log(parseInt(val)); 
+        let updatedTimerInput = parseInt(currentTimerInput) + parseInt(val)
+        timer.value = updatedTimerInput; 
+    })
+}
 
 addButton.addEventListener('click', ()=>{
     console.log('add button clicked'); 
     generateTextBox(); 
 })
 
-// editButton.addEventListener('click', ()=>{
-//     console.log('edit button clicked'); 
-//     editActivity(); 
-// })
-
-// deleteButton.addEventListener('click', () => { 
-
-// })
 
 startButton.addEventListener('click', () => {
     console.log('start button clicked'); 
