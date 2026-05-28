@@ -39,9 +39,7 @@ function generateDeleteButton () {
     return deleteButton; 
 }
 
-function editActivity () {
-    console.log(editActivity); 
-}
+
 function generateEditButton () { 
     let editButton = document.createElement('button'); 
     editButton.setAttribute('id', 'edit-activity'); 
@@ -69,6 +67,7 @@ function generateEditButton () {
         let newLabelInput = document.createElement("input"); 
         newLabelInput.setAttribute("type", "text"); 
         let prevLabelInput = prevLabel.getElementsByTagName("label")[0]; 
+        newLabelInput.setAttribute("value", prevLabelInput.textContent); 
         prevLabelInput.replaceWith(newLabelInput); 
         newLabelInput.addEventListener("keypress", (e)=> { 
             //e.preventDefault()
@@ -168,20 +167,32 @@ function generateTextBox () {
 function displayTimer () {
     let timerDisplay = document.getElementById('timer-display'); 
     let timerInput = document.getElementById('timer').value; 
-    let pauseButton = document.createElement('button'); 
+    let stopButton = document.createElement('button'); 
+    stopButton.setAttribute("id", "start-timer"); 
     //need to set setInterval to a variable and then instead of doing input -= 1 do --
     //clear interval so that it does not go on infinitely
-    
-    timerDisplay.textContent = timerInput; 
+    stopButton.textContent = "stop"
+    // startButton.addEventListener('click', ()=> {
+    //     clearInterval(timer); 
+    // })
+    startButton.replaceWith(stopButton)
+    timerDisplay.textContent = timerInput;  
     //variable assignment here is important so that setInterval is not running unbound and infinitely
     let timer = setInterval(() =>{ 
         timerInput--; 
         timerDisplay.textContent = timerInput; //order matters, if you have this line before timerInput-- then the number is going to display 2 and skip right to 0 without showing 1
         if(timerInput == 0){
-            timerDisplay.textContent = timerInput; 
+            timerDisplay.textContent = timerInput 
             clearInterval(timer); 
         }
     }, 1000)
+
+    stopButton.addEventListener('click', ()=> {
+        
+        clearInterval(timer); 
+        timerDisplay.textContent = ""; 
+        stopButton.replaceWith(startButton); 
+    })
     
 }
 
