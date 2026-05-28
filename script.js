@@ -7,7 +7,8 @@ function generateSaveButton () {
     saveButton.style.cursor = "pointer"; 
     saveButton.textContent = 'Save';  
     saveButton.addEventListener('click', ()=> { 
-        console.log('save button clicked'); 
+        //TESTING ONLY
+        //console.log('save button clicked'); 
         addActivity(); 
     })
     return saveButton; 
@@ -21,7 +22,10 @@ function generateDeleteButton () {
         let index = deleteButton.getAttribute('data-index'); 
         const ul = document.getElementById('activities'); 
         let existing = ul.querySelectorAll('#activity')
-        console.log(existing); 
+
+        //TESTING ONLY
+        //console.log(existing); 
+        
         let nodeToDelete; 
         //let nodeToDelete = existing.item(index) //the reason why this doesn't work is because i'm getting the index not checking that the data index = the data index that the delete button wants to delete
         existing.forEach((node) => {
@@ -30,7 +34,10 @@ function generateDeleteButton () {
                 return; 
             }
         })
-        console.log(nodeToDelete)
+
+        //TESTING ONLY
+        //console.log(nodeToDelete)
+
         ul.removeChild(nodeToDelete)
         //activities.removeChild(this.activity); 
         //in crud, a delete button removes by this id delete by id at its core
@@ -47,10 +54,12 @@ function generateEditButton () {
     editButton.innerText = 'Edit'; 
 
     editButton.addEventListener('click', ()=>{ 
+        //TESTING ONLY
         // console.log('editButton clicked'); 
 
         let index = editButton.getAttribute('data-index'); 
         
+        //TESTING ONLY
         // console.log(index); 
 
         let ul = document.getElementById('activities'); 
@@ -70,7 +79,7 @@ function generateEditButton () {
         newLabelInput.setAttribute("value", prevLabelInput.textContent); 
         prevLabelInput.replaceWith(newLabelInput); 
         newLabelInput.addEventListener("keypress", (e)=> { 
-            //e.preventDefault()
+
             if(e.key == "Enter"){
                 prevLabelInput.textContent = newLabelInput.value; 
                 newLabelInput.replaceWith(prevLabelInput); 
@@ -87,7 +96,6 @@ function addActivity () {
     let existing = ul.querySelectorAll('#activity') //parentnode.queryselectorall, select all existing activities  
     const li = document.createElement('li'); 
 
-    //need to dynamically get the length of the existing list
     liAttributes = { 
         "data-index": existing.length, 
         "id": "activity"
@@ -172,9 +180,7 @@ function displayTimer () {
     //need to set setInterval to a variable and then instead of doing input -= 1 do --
     //clear interval so that it does not go on infinitely
     stopButton.textContent = "stop"
-    // startButton.addEventListener('click', ()=> {
-    //     clearInterval(timer); 
-    // })
+
     startButton.replaceWith(stopButton)
     timerDisplay.textContent = timerInput;  
     //variable assignment here is important so that setInterval is not running unbound and infinitely
