@@ -1,6 +1,6 @@
 /* ---- CSS Variables ---- */
 :root{
-    --pastel-green: #988686; 
+    --pastel-lightBrown: #988686; 
     --pastel-brown: #5C4E4E; 
 }
 
@@ -52,26 +52,28 @@ img{
 
 /*----Input Styling ----*/
 input{
-        color: var(--pastel-green);
+        color: var(--pastel-lightBrown);
         font-size: 3rem; 
         font-weight: bolder; 
         background-color: transparent; 
         text-align: center;
        
     } 
-input[type=number]::placeholder{
-    color: var(--pastel-green); 
+
+#timer::placeholder{
+    color: var(--pastel-lightBrown); 
     font-weight: bold; 
 }
-input[type=number]::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
+input::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
     opacity: 0; 
     margin: 0; 
     display: none; 
+    -webkit-appearance: none; 
 }
-input[type=number]:focus{
-    color: var(--pastel-green)
+#timer:focus{
+    color: var(--pastel-lightBrown)
 }
-input[type=text]{
+#activities>input[type=text]{
     color: var(--pastel-brown); 
     font-size: 2.5rem; 
     text-align: left; 
@@ -111,18 +113,6 @@ input[type=text]{
     color: white; 
     background-color: var(--pastel-brown); 
 }
-.directions{ 
-    color: white; 
-    h2{ 
-        font-size: 2rem; 
-    }
-    li{ 
-        font-size: 1.25rem; 
-    }
-    p{ 
-        margin: 40px; 
-    }
-}
 /*---- Button Styling ----*/
 .quickset{ 
     display: flex; 
@@ -133,12 +123,12 @@ input[type=text]{
     font-weight: bold; 
 }
 .buttons{ 
-    width: 80%;
     margin-top: 1em; 
-    justify-self: center; 
 
     display: flex; 
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .buttons>button{
@@ -151,9 +141,9 @@ input[type=text]{
 
 
 #delete-activity, #edit-activity{
-    border-color: var(--pastel-green); 
+    border-color: var(--pastel-lightBrown); 
     appearance: none;
-    border: 4px var(--pastel-green) solid; 
+    border: 4px var(--pastel-lightBrown) solid; 
     margin-bottom: 1rem; 
     color: black; 
     width: 100%; 
@@ -163,15 +153,15 @@ input[type=text]{
 
 }
 #add-activity, #save-activity{ 
-    border-color: var(--pastel-green); 
-    color: var(--pastel-green); 
+    border-color: var(--pastel-lightBrown); 
+    color: var(--pastel-lightBrown); 
 }
 
 #add-activity:hover, 
 #save-activity:hover, 
 #delete-activity:hover, 
 #edit-activity:hover{
-    background-color: var(--pastel-green); 
+    background-color: var(--pastel-lightBrown); 
     color: black; 
     transform: translate(5%); 
     font-weight: bold; 
